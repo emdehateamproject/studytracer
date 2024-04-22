@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+          "*": ["*", "*.jsx"]
+          // "@components/*": ["src/components/*"],
+          // "@assets/*": ["src/assets/*"],
+          // "@theme/*": ["src/theme/*"],
+          // "@routes/*": ["src/routes/*"],
+          // "@layouts/*": ["src/layouts/*"],
+          // "@views/*": ["src/views/*"],
+          // Tambahkan path lainnya sesuai kebutuhan
+        }
+      },
+      "include": ["src"]
+}
