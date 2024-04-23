@@ -23,12 +23,12 @@ const AuthLogin = ({ title, subtitle, subtext }) => {
     });
 
     const handleSubmit = async (e) => {
-        console.log(credentials);
+        console.log("credential: ",credentials);
         e.preventDefault();
         
         try {
             console.log("proses auth");
-            const response = await axios.post('http://127.0.0.1:5173/login', credentials);
+            const response = await axios.get('http://localhost:5000/login/9', credentials);
             console.log('response', response);
             if (response.status === 200) {
                 await login(response.data);

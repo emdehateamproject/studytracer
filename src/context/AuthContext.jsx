@@ -11,7 +11,7 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const checkLoggedIn = async () => {
-            const response = await fetch('http://127.0.0.1:5000/me');
+            const response = await fetch('http://127.0.0.1:5000/users');
             const data = await response.json();
     
             if (response) {
@@ -26,6 +26,7 @@ const AuthProvider = ({ children }) => {
     const login = (data) => {
         console.log(data)
         localStorage.setItem('userId', JSON.stringify(data?.id));
+        localStorage.setItem('userName', data?.name);
         localStorage.setItem('userData', JSON.stringify(data));
         setCurrentUser(data);
         setAuthenticated(true);

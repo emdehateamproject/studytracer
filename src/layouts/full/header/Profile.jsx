@@ -31,7 +31,7 @@ const Profile = () => {
   };
 
   const handleLogout = async () => {
-    const response = await axios.delete('http://127.0.0.1:5000/logout');
+    const response = await axios.get('http://localhost:5000/logout/9');
     if (response.status === 200) {
       // Redirect to the login page
       logout();
@@ -84,6 +84,7 @@ const Profile = () => {
         }}
       >
         <Box mt={1} py={1} px={2}>
+          <h3 style={{flex: 1, textAlign: 'center',alignItems: 'center'}}>{ localStorage.getItem('userName') }</h3>
           {/* <Button to="/auth/login" variant="outlined" color="primary" component={Link} fullWidth onClick={handleLogout}> */}
           <Button variant="outlined" color="primary" fullWidth onClick={handleLogout}>
             Logout
